@@ -37,12 +37,9 @@ ItemSelected activity;
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ArrayList<String> list=new ArrayList<>();
-        list.add("item 1 added");
-        list.add("item 2 added");
-        list.add("item 3 added");
+        String[] list=getResources().getStringArray(R.array.pieces);
         setListAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,list));
-        activity.onSelecItem(0);
+//        activity.onSelecItem(0);
 
     }
 
