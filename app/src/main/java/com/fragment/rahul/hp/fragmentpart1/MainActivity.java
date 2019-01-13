@@ -33,11 +33,13 @@ TextView tvDetail;
     @Override
     public void onSelecItem(int i) {
         String []list=getResources().getStringArray(R.array.descriptions);
-        manager.beginTransaction()
-                .show(manager.findFragmentById(R.id.detailFragment))
-                .hide(manager.findFragmentById(R.id.listFragment))
-                .addToBackStack(null)
-                .commit();
+        if(findViewById(R.id.layout_portrait)!=null) {
+            manager.beginTransaction()
+                    .show(manager.findFragmentById(R.id.detailFragment))
+                    .hide(manager.findFragmentById(R.id.listFragment))
+                    .addToBackStack(null)
+                    .commit();
+        }
         tvDetail.setText(list[i]);
     }
 }
